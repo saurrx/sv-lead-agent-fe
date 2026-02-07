@@ -69,7 +69,7 @@ export default function QueryPage() {
       query_text: string;
     }) => postQueryData(excelMasterId, query_text),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["query-results"] });
+      queryClient.invalidateQueries({ queryKey: ["query-results", id] });
       setModalOpen(false);
       setQueryText("");
     },
